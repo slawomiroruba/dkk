@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Wydarzenie - Dolnośląski Klub Kapitału</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="event-detail-page">
+	<header class="main-header">
+		<div class="container header-container">
+			<div class="logo">
+				<a href="index.html">
+					<img src="logo.png" alt="Dolnośląski Klub Kapitału" class="logo-white">
+					<img src="logo.png" alt="Dolnośląski Klub Kapitału" class="logo-dark">
+				</a>
+			</div>
+			<button class="mobile-menu-toggle" aria-label="Otwórz menu">
+				<span></span><span></span><span></span>
+			</button>
+			<nav class="main-nav">
+				<ul class="menu-list">
+					<li class="has-dropdown">
+						<a href="o-klubie.html">O Klubie</a>
+						<ul class="dropdown">
+							<li><a href="o-klubie.html#jak-to-sie-zaczelo">Nasza misja</a></li>
+							<li><a href="o-klubie.html#misja-i-cele">Wartości</a></li>
+							<li><a href="o-klubie.html#elitarne-grono">Dla kogo?</a></li>
+							<li><a href="o-klubie.html#zarzad">Władze Klubu</a></li>
+							<li><a href="o-klubie.html#historia-timeline">Historia</a></li>
+						</ul>
+					</li>
+					<li><a href="spolecznosc.html">Społeczność</a></li>
+					<li class="has-dropdown">
+						<a href="dzialalnosc.html">Działalność</a>
+						<ul class="dropdown">
+							<li><a href="dzialalnosc.html#filary">Filary Działalności</a></li>
+							<li><a href="dzialalnosc.html#nauka">Uczelnie Partnerskie</a></li>
+							<li><a href="dzialalnosc.html#mlode-talenty">Młode Talenty</a></li>
+							<li><a href="dzialalnosc.html#galeria">Galeria</a></li>
+						</ul>
+					</li>
+					<li><a href="aktualnosci.html" class="active">Aktualności</a></li>
+					<li><a href="do-pobrania.html">Do pobrania</a></li>
+					<li><a href="kontakt.html">Kontakt</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<section class="hero-page event-hero">
+		<div class="hero-page-bg" id="eventHeroBg"></div>
+		<div class="hero-page-overlay"></div>
+		<div class="hero-page-content container">
+			<div class="glass-breadcrumbs reveal-up">
+				<a href="index.html">Strona Główna</a>
+				<span class="separator"><i class="fa-solid fa-chevron-right" style="font-size: 0.6em;"></i></span>
+				<a href="aktualnosci.html">Aktualności</a>
+				<span class="separator"><i class="fa-solid fa-chevron-right" style="font-size: 0.6em;"></i></span>
+				<span class="current" id="eventBreadcrumb">Wydarzenie</span>
+			</div>
+			<h1 class="hero-page-title reveal-up delay-1" id="eventHeroTitle">Wydarzenie</h1>
+			<p class="hero-page-subtitle reveal-up delay-2" id="eventHeroSubtitle">Relacja ze spotkania Dolnośląskiego Klubu Kapitału.</p>
+		</div>
+	</section>
+
+	<section class="section event-detail-section">
+		<div class="container event-detail-grid">
+			<aside class="event-meta-panel">
+				<div id="sidebarEvents" style="display: flex; flex-direction: column; gap: 3rem;">
+					<!-- Sidebar events will be injected here via JavaScript -->
+				</div>
+			</aside>
+
+			<div class="event-article">
+				<div class="event-story-card">
+					<div class="event-story-top">
+						<span class="event-story-label">Relacja</span>
+						<h2 class="event-story-title" id="eventStoryTitle">Wydarzenie</h2>
+						<div class="divider-gold"></div>
+					</div>
+					<div class="event-story-body" id="eventStoryBody"></div>
+
+					<div class="event-gallery-block" id="eventGalleryBlock" hidden>
+						<div class="event-gallery-grid" id="eventGalleryGrid"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="gallery-lightbox" id="eventLightbox">
+		<button class="gallery-lightbox-nav prev" type="button" id="eventLightboxPrev" aria-label="Poprzednie zdjęcie"><i class="fa-solid fa-chevron-left"></i></button>
+		<button class="gallery-lightbox-close" type="button" id="eventLightboxClose" aria-label="Zamknij podgląd"><i class="fa-solid fa-xmark"></i></button>
+		<img class="gallery-lightbox-image" id="eventLightboxImage" src="" alt="">
+		<button class="gallery-lightbox-nav next" type="button" id="eventLightboxNext" aria-label="Następne zdjęcie"><i class="fa-solid fa-chevron-right"></i></button>
+	</div>
+
+	<!-- Footer -->
+	<footer id="stopka" class="main-footer">
+		<div class="container">
+			<div class="footer-grid">
+				<div class="footer-col">
+					<img src="logo.png" alt="Dolnośląski Klub Kapitału" class="footer-logo">
+					<p>ul. Irysowa 1/3<br>51-117 Wrocław</p>
+					<p>tel. +48 71 722 42 84</p>
+					<p>e-mail: <a href="mailto:biuro@dkk.wroclaw.pl">biuro@dkk.wroclaw.pl</a></p>
+				</div>
+				<div class="footer-col">
+					<h4>Dane Rejestrowe</h4>
+					<p>NIP: 895 203 92 03</p>
+					<p>Regon: 360613413</p>
+					<p>KRS: 0000539952</p>
+				</div>
+				<div class="footer-col">
+					<h4>Szybkie Linki</h4>
+					<ul class="footer-links">
+						<li><a href="o-klubie.html">O klubie</a></li>
+						<li><a href="spolecznosc.html">Społeczność</a></li>
+						<li><a href="dzialalnosc.html">Działalność</a></li>
+						<li><a href="aktualnosci.html">Aktualności</a></li>
+						<li><a href="do-pobrania.html">Do pobrania</a></li>
+						<li><a href="kontakt.html">Kontakt</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom text-center">
+				<p>Wszelkie prawa zastrzeżone &copy; 2016. Realizacja: <a href="http://www.studionuovo.pl" target="_blank" style="color: inherit; text-decoration: none;">www.studionuovo.pl</a></p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="events-data.js"></script>
+	<script>
+		(function () {
+			const params = new URLSearchParams(window.location.search);
+			const slug = params.get('slug');
+			const data = window.EVENTS_DATA ? window.EVENTS_DATA[slug] : null;
+			const fallbackImage = 'images/downloaded/20251021_184321.jpg';
+			const isDecorativeAsset = (path) => /logo|nagroda-mt|responsive/i.test(path || '');
+			const capitalize = (value) => value ? value.charAt(0).toUpperCase() + value.slice(1) : '';
+
+			const titleEl = document.getElementById('eventHeroTitle');
+			const breadcrumbEl = document.getElementById('eventBreadcrumb');
+			const subtitleEl = document.getElementById('eventHeroSubtitle');
+			const storyTitleEl = document.getElementById('eventStoryTitle');
+			const storyBodyEl = document.getElementById('eventStoryBody');
+			const heroBgEl = document.getElementById('eventHeroBg');
+			const galleryBlockEl = document.getElementById('eventGalleryBlock');
+			const galleryGridEl = document.getElementById('eventGalleryGrid');
+			const lightboxEl = document.getElementById('eventLightbox');
+			const lightboxImageEl = document.getElementById('eventLightboxImage');
+			const lightboxCloseEl = document.getElementById('eventLightboxClose');
+			const lightboxPrevEl = document.getElementById('eventLightboxPrev');
+			const lightboxNextEl = document.getElementById('eventLightboxNext');
+
+			if (!data) {
+				document.title = 'Wydarzenie nie znalezione - Dolnośląski Klub Kapitału';
+				titleEl.textContent = 'Wydarzenie nie zostało znalezione';
+				breadcrumbEl.textContent = 'Brak wydarzenia';
+				subtitleEl.textContent = 'Sprawdź link lub wróć do archiwum aktualności.';
+				storyTitleEl.textContent = 'Brak danych';
+				storyBodyEl.innerHTML = '<p>Nie udało się odnaleźć wybranego wydarzenia.</p><p><a href="aktualnosci.html#archiwum-wydarzen" class="journal-link">Wróć do archiwum <i class="fa-solid fa-arrow-right-long"></i></a></p>';
+				heroBgEl.style.backgroundImage = `linear-gradient(135deg, rgba(10, 26, 47, 0.38) 0%, rgba(10, 26, 47, 0.62) 100%), url('${fallbackImage}')`;
+				return;
+			}
+
+			const visualGallery = [data.coverImage, ...(data.gallery || [])].filter((item, index, arr) => item && !isDecorativeAsset(item) && arr.indexOf(item) === index);
+			const coverImage = visualGallery[0] || fallbackImage;
+			const title = capitalize(data.title);
+			const eventParagraphs = Array.isArray(data.paragraphs) ? data.paragraphs : [];
+
+			document.title = `${title} - Dolnośląski Klub Kapitału`;
+			titleEl.textContent = title;
+			breadcrumbEl.textContent = title;
+			subtitleEl.textContent = 'Archiwalna relacja ze spotkania Dolnośląskiego Klubu Kapitału przeniesiona ze starej strony.';
+			storyTitleEl.textContent = title;
+			heroBgEl.style.backgroundImage = `linear-gradient(135deg, rgba(10, 26, 47, 0.34) 0%, rgba(10, 26, 47, 0.66) 100%), url('${coverImage}')`;
+
+			storyBodyEl.innerHTML = eventParagraphs.map((paragraph) => `<p>${paragraph}</p>`).join('');
+
+			let currentImageIndex = 0;
+			if (visualGallery.length) {
+				galleryBlockEl.hidden = false;
+				galleryGridEl.innerHTML = visualGallery.map((image, index) => `
+					<button class="event-gallery-item" type="button" data-image-index="${index}" aria-label="Powiększ zdjęcie ${index + 1}">
+						<img src="${image}" alt="${title} - zdjęcie ${index + 1}">
+					</button>
+				`).join('');
+
+				const showImage = (index) => {
+					currentImageIndex = (index + visualGallery.length) % visualGallery.length;
+					lightboxImageEl.src = visualGallery[currentImageIndex];
+					lightboxImageEl.alt = `${title} - zdjęcie ${currentImageIndex + 1}`;
+					lightboxEl.classList.add('open');
+				};
+
+				galleryGridEl.querySelectorAll('.event-gallery-item').forEach((button) => {
+					button.addEventListener('click', () => showImage(Number(button.dataset.imageIndex || 0)));
+				});
+
+				lightboxPrevEl.addEventListener('click', () => showImage(currentImageIndex - 1));
+				lightboxNextEl.addEventListener('click', () => showImage(currentImageIndex + 1));
+				lightboxCloseEl.addEventListener('click', () => lightboxEl.classList.remove('open'));
+				lightboxEl.addEventListener('click', (event) => {
+					if (event.target === lightboxEl) {
+						lightboxEl.classList.remove('open');
+					}
+				});
+				document.addEventListener('keydown', (event) => {
+					if (!lightboxEl.classList.contains('open')) {
+						return;
+					}
+					if (event.key === 'Escape') {
+						lightboxEl.classList.remove('open');
+					}
+					if (event.key === 'ArrowLeft') {
+						showImage(currentImageIndex - 1);
+					}
+					if (event.key === 'ArrowRight') {
+						showImage(currentImageIndex + 1);
+					}
+				});
+			}
+
+			// Generate Sidebar Events - excluding current one
+			const sidebarContainer = document.getElementById('sidebarEvents');
+			if (sidebarContainer && window.EVENTS_DATA) {
+				const allEvents = Object.values(window.EVENTS_DATA);
+				
+				// Sort by date descending
+				allEvents.sort((a, b) => {
+					if (a.sortDate < b.sortDate) return 1;
+					if (a.sortDate > b.sortDate) return -1;
+					return 0;
+				});
+
+				// Filter out current event and take top 3
+				const sidebarEvents = allEvents
+					.filter(event => event.slug !== slug)
+					.slice(0, 3);
+
+				sidebarContainer.innerHTML = sidebarEvents.map(event => `
+					<article class="journal-card">
+						<div class="journal-date-badge">
+							<div class="j-row"><span class="j-day">${event.day}</span><span class="j-month">${event.month}</span></div>
+							<span class="j-year">${event.year}</span>
+						</div>
+						<div class="journal-content-wrapper">
+							<span class="journal-category">${event.month} ${event.year} R.</span>
+							<h3 class="journal-title">Spotkanie Klubowe</h3>
+							<p class="journal-excerpt" style="font-size: 0.9rem; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">${event.paragraphs && event.paragraphs[0] ? event.paragraphs[0].substring(0, 150) + '...' : ''}</p>
+							<a href="wydarzenie.html?slug=${event.slug}" class="journal-link">Zobacz wydarzenie <i class="fa-solid fa-arrow-right-long"></i></a>
+						</div>
+					</article>
+				`).join('');
+			}
+		})();
+	</script>
+	<script src="script.js"></script>
+</body>
+
+</html>

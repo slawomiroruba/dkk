@@ -1,0 +1,63 @@
+
+/* --- Registry Light Theme (for O-Klubie) --- */
+.downloads-registry.light-theme {
+    background-color: var(--white);
+    padding: var(--spacing-xl) 0;
+}
+
+.downloads-registry.light-theme .registry-list-container {
+    background: transparent;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.downloads-registry.light-theme .registry-item {
+    border-bottom: 1px solid var(--border-color); /* Light border */
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.downloads-registry.light-theme .registry-item:last-child {
+    border-bottom: none;
+}
+
+.downloads-registry.light-theme .registry-item:hover {
+    background-color: var(--cream-bg); /* Light cream hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.downloads-registry.light-theme .registry-title {
+    color: var(--navy-primary);
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.downloads-registry.light-theme .registry-meta {
+    color: var(--text-light);
+}
+
+/* Icon Box Light Version */
+.downloads-registry.light-theme .registry-icon-box {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-silver);
+}
+
+.downloads-registry.light-theme .registry-item:hover .registry-icon-box {
+    background-color: var(--navy-primary);
+    color: var(--gold-accent);
+    border-color: var(--navy-primary);
+}
+
+/* Download Button Light Version */
+.downloads-registry.light-theme .registry-download-btn {
+    border: 1px solid var(--border-color);
+    color: var(--navy-primary);
+}
+
+.downloads-registry.light-theme .registry-item:hover .registry-download-btn {
+    background-color: var(--navy-primary);
+    color: var(--white);
+    border-color: var(--navy-primary);
+}

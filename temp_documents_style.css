@@ -1,0 +1,66 @@
+.documents-section {
+    background-color: #f9f9f9; /* Very light gray */
+    padding: 5rem 0;
+}
+
+.documents-list-container {
+    max-width: 800px;
+    margin: 3rem auto 0;
+}
+
+.document-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border: 1px solid rgba(0,0,0,0.05); /* Very subtle border */
+    border-radius: 4px; /* Slight rounding, keeping it mostly sharp/minimalist */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.document-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-color: var(--gold-accent); /* Gold border on hover */
+}
+
+.doc-icon-wrapper {
+    font-size: 2rem;
+    color: var(--navy-primary); /* Navy icon color */
+    margin-right: 1.5rem;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.document-item:hover .doc-icon-wrapper {
+    color: var(--gold-accent); /* Icon turns gold on hover */
+    opacity: 1;
+}
+
+.doc-name {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.1rem;
+    flex-grow: 1; /* Pushes download icon to the right */
+}
+
+.doc-download-icon {
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.document-item:hover .doc-download-icon {
+    color: var(--navy-primary);
+}

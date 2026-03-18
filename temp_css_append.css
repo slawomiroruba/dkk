@@ -1,0 +1,173 @@
+/* --- Enhanced Board Deck with Bios --- */
+.deck-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.deck-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.deck-bio {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.9);
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.deck-card:hover .deck-bio {
+    opacity: 1;
+    max-height: 150px;
+    margin-top: 1rem;
+    color: var(--navy-dark);
+}
+
+.deck-card:hover .deck-info h2,
+.deck-card:hover .deck-info h3 {
+    color: var(--navy-dark);
+}
+
+/* --- Council & Audit Section --- */
+.council-section {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.council-title-small {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--text-light); /* Or Gold? */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.council-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.council-item {
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: 0.3s;
+}
+
+.council-item:hover {
+    background: #fffcf5; /* faint gold tint */
+    border-color: rgba(197, 160, 89, 0.2);
+}
+
+.council-name {
+    font-size: 1.25rem;
+    color: var(--navy-primary);
+    margin-bottom: 0.5rem;
+}
+
+.council-role {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .council-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Member Profile Section --- */
+.member-profile-section {
+    background-color: var(--white);
+    position: relative;
+    padding: var(--spacing-xl) 0;
+}
+
+.member-profile-content {
+    position: relative;
+    display: flow-root; 
+}
+
+.member-profile-img {
+    float: left;
+    width: 45%;
+    max-width: 550px;
+    height: auto;
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
+
+.member-profile-text {
+    color: var(--text-dark);
+}
+
+.member-profile-text h2.section-title {
+    color: var(--navy-primary);
+    font-size: 3rem; 
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.member-profile-text p.section-desc {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.profile-highlight-box {
+    margin-top: 3rem;
+    padding: 1rem 0 1rem 2rem;
+    border-left: 3px solid var(--gold-accent);
+}
+
+.profile-highlight-box h3 {
+    font-family: var(--font-heading);
+    color: var(--navy-primary);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.profile-highlight-box p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: var(--text-light);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .member-profile-img {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+    
+    .profile-highlight-box {
+        padding-left: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .member-profile-text h2.section-title {
+        font-size: 2.5rem;
+    }
+}

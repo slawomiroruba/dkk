@@ -1,0 +1,546 @@
+/* --- Modern Clean Science Section 2026 --- */
+.science-business-luxury {
+    background-color: #fff;
+    color: var(--text-dark);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container */
+.science-business-luxury .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Grid Layout */
+.science-luxury-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+/* --- Visual Side (Left) --- */
+.science-visual-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.science-visual-frame {
+    position: relative;
+    width: 100%;
+    /* Aspect ratio 4:5 is very modern portrait, 4:3 is standard. Let's go 4:3 */
+    aspect-ratio: 4/3; 
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    /* No border, just clean shadow */
+}
+
+.science-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.science-visual-wrapper:hover .science-hero-img {
+    transform: scale(1.03);
+}
+
+/* Floating Sticker Badge */
+.science-sticker {
+    position: absolute;
+    bottom: 40px;
+    left: -40px;
+    background-color: var(--white);
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 3;
+    animation: float-badge 6s ease-in-out infinite;
+}
+
+.sticker-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--gold-accent);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.sticker-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.sticker-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--navy-primary);
+}
+
+.sticker-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+@keyframes float-badge {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* --- Content Side (Right) --- */
+.science-content-luxury {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.science-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold-accent);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.science-label::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background-color: var(--gold-accent);
+}
+
+.science-section-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: var(--navy-primary);
+    margin-bottom: 30px;
+}
+
+.science-section-title span {
+    color: var(--gold-accent); /* Optional: use if highlighting words */
+}
+
+.science-lead-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.science-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+/* --- Logos Marquee (Clean) --- */
+.universities-marquee {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.marquee-title {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--navy-primary);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.marquee-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Soft fade masks on edges */
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 60px; /* Reduced gap */
+    width: max-content;
+    /* Speed calculation: width / speed. Adjust if needed. */
+    animation: marquee-scroll 50s linear infinite;
+    align-items: center;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Assumes duplicated content */
+}
+
+.partner-logo {
+    height: 60px; /* Balanced size */
+    width: auto;
+    object-fit: contain;
+    /* Full Color & Blend with BG */
+    filter: none;
+    mix-blend-mode: multiply; /* Removes white background */
+    transition: all 0.4s ease;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Button */
+.btn-science-primary {
+    align-self: flex-start;
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background-color: var(--navy-primary);
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-science-primary:hover {
+    background-color: var(--gold-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(197, 160, 89, 0.3);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .science-business-luxury {
+        padding: 60px 0;
+    }
+    .science-luxury-grid {
+        grid-template-columns: 1fr; /* Stack */
+        gap: 50px;
+    }
+    .science-visual-wrapper {
+        aspect-ratio: 16/9; /* Wider on mobile */
+    }
+    .science-sticker {
+        left: 20px;
+        bottom: -30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .science-section-title {
+        font-size: 2.5rem;
+    }
+    .science-sticker {
+        padding: 15px 20px;
+        bottom: -25px;
+    }
+    .sticker-number { font-size: 1.5rem; }
+    .sticker-icon { width: 40px; height: 40px; font-size: 1rem; }
+    
+    .marquee-track {
+        gap: 40px;
+    }
+    .partner-logo {
+        height: 40px;
+    }
+}
+
+
+
+/* --- Keyframes --- */
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+
+/* --- Custom Science Divider --- */
+.science-divider {
+    width: 80px;
+    height: 3px;
+    background-color: var(--gold-accent);
+    margin: 1.5rem 0 2rem 0;
+    border-radius: 2px;
+}
+
+
+/* --- Complex Visual Composition (Science) --- */
+.science-visual-complex {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    /* Ensure container has height */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deco-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 70%;
+    border: 2px solid var(--gold-accent);
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.main-image-frame {
+    position: relative;
+    z-index: 2;
+    width: 85%;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.complex-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sticker-box {
+    position: absolute;
+    background: white;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-width: 140px;
+    text-align: center;
+}
+
+.sticker-box.top-right {
+    top: 60px;
+    right: 0;
+}
+
+.sticker-box.bottom-left {
+    bottom: 40px;
+    left: 10px;
+}
+
+.sticker-val {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--navy-primary);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.sticker-sub {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--gold-accent);
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Inset Person Image */
+.inset-person-frame {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 180px;
+    height: 220px;
+    z-index: 5;
+    border: 8px solid white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.inset-person-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+@media (max-width: 768px) {
+    .inset-person-frame {
+        width: 120px;
+        height: 150px;
+        right: 0;
+        bottom: -30px;
+    }
+    .sticker-box {
+        padding: 15px;
+        min-width: 100px;
+    }
+    .sticker-val { font-size: 1.5rem; }
+    .science-visual-complex {
+        padding: 10px;
+        max-width: 100%;
+    }
+}
+
+
+/* Fix for the complex visual container */
+.science-visual-complex {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    /* Aspect ratio for the overall composition */
+    aspect-ratio: 4/5;
+    margin: 30px auto;
+}
+
+.deco-frame {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    width: 60%;
+    height: 60%;
+    border: 2px solid var(--gold-accent);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.main-image-frame {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+.complex-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Stickers */
+.sticker-box {
+    background: var(--white);
+    padding: 25px;
+    position: absolute;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    z-index: 5;
+    text-align: center;
+}
+
+.sticker-box.top-right {
+    top: 60px;
+    right: 0;
+}
+
+.sticker-box.bottom-left {
+    bottom: 0;
+    left: 20px;
+    padding: 30px 40px;
+}
+
+.sticker-val {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2.5rem; /* Larger number */
+    font-weight: 700;
+    color: var(--navy-primary);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.sticker-sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-accent);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+}
+
+/* Inset Person */
+.inset-person-frame {
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    width: 140px;
+    height: 160px;
+    background: var(--white);
+    padding: 6px;
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.inset-person-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Align to top for portraits */
+    object-position: top center;
+}
+
+
+
+.sticker-box.single-main {
+    background: white;
+    padding: 20px 30px;
+    position: absolute;
+    top: 50px;
+    left: -25px; /* Moved to Left */
+    right: auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    z-index: 8;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.sticker-box.single-main:hover {
+    transform: translateY(-5px);
+}
+ 

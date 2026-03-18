@@ -1,0 +1,129 @@
+
+/* --- Documents Section (Refined) --- */
+.documents-section {
+    background-color: var(--white);
+    padding: var(--spacing-xl) 0;
+}
+
+.section-subtitle-wrapper {
+    margin-bottom: 4rem;
+}
+
+.documents-list-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid var(--border-color); /* Top line */
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    padding: 2rem 1.5rem; /* Spacious padding */
+    border-bottom: 1px solid var(--border-color); /* Bottom line separator */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden; /* For pseudo-element effects */
+    text-decoration: none; /* No underline */
+    background-color: transparent;
+}
+
+.document-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--gold-accent);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom;
+}
+
+.document-item:hover {
+    background-color: var(--cream-bg); /* Very light background on hover */
+    padding-left: 2.5rem; /* Slide effect */
+}
+
+.document-item:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.doc-icon-wrapper {
+    font-size: 1.8rem;
+    color: var(--text-silver); /* Subtle icon color */
+    margin-right: 2rem;
+    min-width: 40px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.document-item:hover .doc-icon-wrapper {
+    color: var(--navy-primary); /* Darker icon on hover */
+}
+
+.doc-name {
+    font-family: var(--font-heading); /* Elegant serif font */
+    font-weight: 500;
+    font-size: 1.4rem; /* Larger text */
+    color: var(--text-dark);
+    flex-grow: 1;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.document-item:hover .doc-name {
+    color: var(--navy-primary);
+}
+
+.doc-download-icon {
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    opacity: 0; /* Hidden initially */
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.document-item:hover .doc-download-icon {
+    opacity: 1;
+    transform: translateX(0); /* Slide in */
+}
+
+/* Specific styling for the PDF/file format pill */
+.doc-meta {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-left: 1rem;
+    margin-right: 2rem; /* Space before download icon */
+    transition: all 0.3s ease;
+}
+
+.document-item:hover .doc-meta {
+    border-color: var(--gold-accent);
+    color: var(--gold-accent);
+}
+
+@media (max-width: 768px) {
+    .document-item {
+        padding: 1.5rem 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .doc-name {
+        font-size: 1.2rem;
+        width: 100%; /* Break to new line on very small screens */
+        margin-bottom: 0.5rem;
+    }
+    
+    .doc-meta {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}

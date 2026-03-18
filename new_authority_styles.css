@@ -1,0 +1,167 @@
+
+/* --- NEW AUTHORITY SECTION (Elegant Portraits) --- */
+.authority-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 3rem;
+}
+
+.authority-card {
+    width: 320px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    border-bottom: 3px solid transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden; /* Ensure overlay stays inside */
+}
+
+.authority-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    border-bottom-color: var(--gold-accent);
+}
+
+.authority-img-wrapper {
+    height: 360px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #e0e0e0;
+}
+
+.authority-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: saturate(0.8) contrast(1.1); /* Slightly editorial look */
+}
+
+.authority-card:hover .authority-img-wrapper img {
+    transform: scale(1.05);
+    filter: saturate(1) contrast(1);
+}
+
+/* Bio Overlay - Slides up over image */
+.authority-bio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(20, 50, 88, 0.96); /* New Deep Navy #143258 */
+    color: #fff;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    transform: translateY(10px);
+}
+
+.authority-card:hover .authority-bio-overlay {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.authority-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    font-family: var(--font-heading); /* Serif font for bio */
+}
+
+/* Info Box */
+.authority-info {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--white);
+    position: relative;
+    z-index: 5;
+}
+
+.authority-role {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.authority-name {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--navy-primary);
+    margin: 0;
+}
+
+/* --- Council List (Clean Ledger Style) --- */
+.council-ledger {
+    max-width: 900px;
+    margin: 4rem auto 0;
+    border-top: 1px solid #eaeaea;
+}
+
+.council-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #eaeaea;
+    transition: background 0.3s ease;
+}
+
+.council-row:hover {
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border-color: transparent;
+    transform: scale(1.01);
+}
+
+.council-row-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--navy-dark);
+    font-weight: 600;
+}
+
+.council-row-role {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.council-row-role::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: var(--gold-accent);
+}
+
+@media (max-width: 768px) {
+    .council-row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .council-row-role::before {
+        display: none;
+    }
+}
