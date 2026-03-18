@@ -149,6 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
     addAnimation(document.querySelectorAll('.flagship-content'), 'reveal-up', 0);
     addAnimation(document.querySelectorAll('.activity-gallery-lead'), 'reveal-up', 0);
     addAnimation(document.querySelectorAll('.activity-gallery-grid, .activity-gallery-actions'), 'reveal-up', 0);
+    addAnimation(document.querySelectorAll('.synergy-visual'), 'reveal-left', 0);
+    addAnimation(document.querySelectorAll('.synergy-content'), 'reveal-up', 0);
+    addAnimation(document.querySelectorAll('.synergy-carousel-wrapper'), 'reveal-up', 0);
 
     const galleryGrid = document.querySelector('.activity-gallery-grid');
     const galleryLoadMore = document.querySelector('.activity-gallery-load-more');

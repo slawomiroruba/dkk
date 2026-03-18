@@ -544,3 +544,438 @@
     transform: translateY(-5px);
 }
  
+/* ===========================================================
+   SYNERGY SECTION — Synergia Biznesu i Nauki
+   =========================================================== */
+
+.synergy-section {
+	background: linear-gradient(175deg, #f8f6f1 0%, #ffffff 40%, #fdfbf7 100%);
+	position: relative;
+	overflow: hidden;
+	padding: 120px 0 100px;
+}
+
+.synergy-section::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 700px;
+	height: 700px;
+	background: radial-gradient(circle, rgba(197,160,89,0.06) 0%, transparent 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.synergy-section::after {
+	content: '';
+	position: absolute;
+	bottom: -30%;
+	left: -15%;
+	width: 500px;
+	height: 500px;
+	background: radial-gradient(circle, rgba(20,50,88,0.04) 0%, transparent 70%);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+/* --- Grid --- */
+.synergy-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 80px;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+	margin-bottom: 80px;
+}
+
+/* --- Left Visual --- */
+.synergy-visual {
+	position: relative;
+	width: 100%;
+	max-width: 500px;
+	aspect-ratio: 4/5;
+	margin: 0 auto;
+}
+
+.synergy-deco-frame {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 75%;
+	height: 75%;
+	border: 2px solid var(--gold-accent);
+	opacity: 0.4;
+	z-index: 1;
+	transition: opacity 0.4s ease;
+}
+
+.synergy-visual:hover .synergy-deco-frame {
+	opacity: 0.7;
+}
+
+.synergy-image-frame {
+	position: absolute;
+	top: 0;
+	left: 30px;
+	right: 20px;
+	bottom: 30px;
+	z-index: 2;
+	overflow: hidden;
+	box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+}
+
+.synergy-main-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.synergy-visual:hover .synergy-main-img {
+	transform: scale(1.04);
+}
+
+/* Stat Badge */
+.synergy-stat-badge {
+	position: absolute;
+	bottom: -10px;
+	left: -10px;
+	background: var(--white);
+	padding: 22px 28px;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	z-index: 5;
+	box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+	animation: synergy-float 5s ease-in-out infinite;
+}
+
+@keyframes synergy-float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-8px); }
+}
+
+.synergy-stat-icon {
+	width: 52px;
+	height: 52px;
+	background: linear-gradient(135deg, var(--gold-accent), #d4b36a);
+	color: var(--white);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.2rem;
+	flex-shrink: 0;
+}
+
+.synergy-stat-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.synergy-stat-number {
+	font-family: var(--font-heading);
+	font-size: 3rem;
+	font-weight: 700;
+	color: var(--navy-primary);
+	line-height: 1;
+}
+
+.synergy-stat-label {
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: var(--text-light);
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.synergy-accent-dot {
+	position: absolute;
+	top: -15px;
+	right: 40px;
+	width: 30px;
+	height: 30px;
+	background: var(--gold-accent);
+	border-radius: 50%;
+	opacity: 0.25;
+	z-index: 0;
+}
+
+/* --- Right Content --- */
+.synergy-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	z-index: 2;
+}
+
+.synergy-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	margin-bottom: 20px;
+}
+
+.synergy-label::before {
+	content: '';
+	width: 40px;
+	height: 2px;
+	background: var(--gold-accent);
+}
+
+.synergy-label span {
+	font-size: 0.82rem;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: var(--gold-accent);
+	font-weight: 600;
+	font-family: var(--font-body);
+}
+
+.synergy-content .section-title {
+	font-size: 3rem;
+	line-height: 1.15;
+	margin-bottom: 0.5rem;
+}
+
+.synergy-lead {
+	font-size: 1.12rem;
+	line-height: 1.7;
+	color: var(--text-dark);
+	margin-bottom: 1.2rem;
+	font-weight: 400;
+}
+
+.synergy-desc {
+	font-size: 0.95rem;
+	line-height: 1.8;
+	color: var(--text-light);
+	margin-bottom: 2.5rem;
+}
+
+/* Highlights */
+.synergy-highlights {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.synergy-highlight-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 18px;
+	padding: 18px 22px;
+	background: rgba(253, 251, 247, 0.8);
+	border: 1px solid rgba(197, 160, 89, 0.15);
+	border-radius: 12px;
+	transition: all 0.35s ease;
+}
+
+.synergy-highlight-item:hover {
+	background: var(--white);
+	border-color: rgba(197, 160, 89, 0.35);
+	box-shadow: 0 8px 30px rgba(197, 160, 89, 0.1);
+	transform: translateX(5px);
+}
+
+.synergy-highlight-item > i {
+	width: 44px;
+	height: 44px;
+	min-width: 44px;
+	background: linear-gradient(135deg, var(--navy-primary), #1a3f6e);
+	color: var(--gold-accent);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+}
+
+.synergy-highlight-item div {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+}
+
+.synergy-highlight-item strong {
+	font-size: 0.92rem;
+	color: var(--navy-primary);
+	font-weight: 600;
+}
+
+.synergy-highlight-item span {
+	font-size: 0.82rem;
+	color: var(--text-light);
+	line-height: 1.5;
+}
+
+/* ===========================================================
+   LOGO CAROUSEL
+   =========================================================== */
+
+.synergy-carousel-wrapper {
+	position: relative;
+	z-index: 2;
+	padding-top: 20px;
+}
+
+.synergy-carousel-header {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	margin-bottom: 45px;
+}
+
+.synergy-carousel-line {
+	flex: 1;
+	height: 1px;
+	background: linear-gradient(to right, transparent, rgba(197,160,89,0.3), transparent);
+}
+
+.synergy-carousel-title {
+	font-family: var(--font-body);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color: var(--navy-primary);
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.synergy-carousel-viewport {
+	width: 100%;
+	overflow: hidden;
+	mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.synergy-carousel-track {
+	display: flex;
+	gap: 0;
+	width: max-content;
+	animation: synergy-scroll 30s linear infinite;
+}
+
+.synergy-carousel-track:hover {
+	animation-play-state: paused;
+}
+
+@keyframes synergy-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+.synergy-logo-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+	padding: 25px 45px;
+	min-width: 200px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+}
+
+.synergy-logo-item:hover {
+	transform: translateY(-5px);
+}
+
+.synergy-logo-item img {
+	height: 70px;
+	width: auto;
+	max-width: 160px;
+	object-fit: contain;
+	filter: grayscale(40%) opacity(0.7);
+	transition: all 0.4s ease;
+}
+
+.synergy-logo-item:hover img {
+	filter: grayscale(0%) opacity(1);
+	transform: scale(1.08);
+}
+
+.synergy-logo-item span {
+	font-size: 0.72rem;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: var(--text-light);
+	font-weight: 500;
+	text-align: center;
+	opacity: 0;
+	transform: translateY(5px);
+	transition: all 0.3s ease;
+}
+
+.synergy-logo-item:hover span {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ===========================================================
+   RESPONSIVE
+   =========================================================== */
+
+@media (max-width: 992px) {
+	.synergy-section {
+		padding: 80px 0 70px;
+	}
+	.synergy-grid {
+		grid-template-columns: 1fr;
+		gap: 60px;
+	}
+	.synergy-visual {
+		max-width: 400px;
+	}
+	.synergy-content .section-title {
+		font-size: 2.5rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.synergy-section {
+		padding: 60px 0 50px;
+	}
+	.synergy-grid {
+		gap: 40px;
+		margin-bottom: 50px;
+	}
+	.synergy-visual {
+		max-width: 320px;
+	}
+	.synergy-content .section-title {
+		font-size: 2rem;
+	}
+	.synergy-stat-badge {
+		padding: 16px 20px;
+		gap: 12px;
+		left: 0;
+		bottom: -5px;
+	}
+	.synergy-stat-number {
+		font-size: 2.2rem;
+	}
+	.synergy-stat-icon {
+		width: 42px;
+		height: 42px;
+	}
+	.synergy-logo-item {
+		padding: 20px 30px;
+		min-width: 160px;
+	}
+	.synergy-logo-item img {
+		height: 50px;
+	}
+	.synergy-logo-item span {
+		opacity: 1;
+		transform: none;
+		font-size: 0.65rem;
+	}
+	.synergy-highlight-item {
+		padding: 14px 16px;
+	}
+}
