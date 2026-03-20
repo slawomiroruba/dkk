@@ -235,6 +235,32 @@
 		</div>
 	</section>
 
+	<!-- Galeria -->
+	<section id="galeria" class="section gallery-section">
+		<div class="container">
+			<div class="text-center">
+				<span class="suptitle text-gold">Nasza Działalność w Obiektywie</span>
+				<h2 class="section-title">Galeria</h2>
+				<div class="divider-gold"></div>
+			</div>
+			<div class="gallery-grid" id="galleryGrid"></div>
+			<div class="text-center" style="margin-top: 1rem;">
+				<a href="#" class="btn-text-gold-large" id="galleryLoadMore">Załaduj więcej zdjęć</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Lightbox -->
+	<div class="gallery-lightbox" id="galleryLightbox">
+		<button class="lightbox-close" id="lightboxClose" aria-label="Zamknij">&times;</button>
+		<button class="lightbox-prev" id="lightboxPrev" aria-label="Poprzednie">&#10094;</button>
+		<button class="lightbox-next" id="lightboxNext" aria-label="Następne">&#10095;</button>
+		<div class="lightbox-img-wrapper">
+			<img src="" alt="" id="lightboxImg">
+		</div>
+		<div class="lightbox-counter" id="lightboxCounter"></div>
+	</div>
+
 	<!-- Footer -->
 	<footer id="stopka" class="main-footer">
 		<div class="container">
@@ -270,5 +296,130 @@
 	</footer>
 
 	<script src="script.js"></script>
+	<script>
+	(function() {
+		const galleryImages = [
+			"20240319_194004.jpg","20240319_195354.jpg","20240319_200325.jpg","20240319_205848.jpg","20240319_214121-002.jpg",
+			"20241023_182100.jpg","20241023_183654.jpg","20241023_183659.jpg","20241023_184158.jpg","20241023_184215.jpg",
+			"20241023_184758.jpg","20241023_184810.jpg","20241023_190012.jpg","20241023_190218.jpg","20241023_190221.jpg",
+			"20241023_190235.jpg","20241023_191843.jpg","20241023_194446.jpg","20241023_194638.jpg","20241023_200551.jpg",
+			"20241023_200633.jpg","20241023_200711.jpg","20241023_201745.jpg","20241023_201943.jpg","20241023_201951.jpg",
+			"2024-styczen-IMG-20240129-WA0000.jpg","2024-styczen-IMG-20240129-WA0001.jpg","2024-styczen-IMG-20240129-WA0002.jpg",
+			"20250317_184147.jpg","20250317_184249.jpg","20250317_184723.jpg","20250317_184805.jpg","20250317_185206.jpg","20250317_185503.jpg",
+			"20250422_181907.jpeg","20250422_182553.jpeg","20250422_185320.jpeg","20250422_185758.jpeg","20250422_185912.jpeg",
+			"20250422_190011.jpeg","20250422_191055.jpeg","20250422_191102.jpeg","20250422_192513.jpeg","20250422_194030.jpeg","20250422_194043.jpeg",
+			"20250922_184018.jpg","20250922_184053.jpg","20250922_184059.jpg",
+			"20251021_184321.jpg","20251021_184427.jpg","20251021_184506.jpg","20251021_184629.jpg","20251021_2034140.jpg",
+			"250519_205825_fot_artnuve.jpg",
+			"Adam-Maciejczyk.jpg","AndrzejGawe\u0142.png","Andrzej-Gospodarowicz-dkk.jpg","Andrzej-Kaleta.jpg","Andrzej-Panas.jpg",
+			"Andrzej-Przybylo-dkk.jpg","AndrzejRokita.png","AndrzejsWojs.png","AnnaSamuelKubiccy.png",
+			"Boguslaw-Fiedor-dkk.jpg","Bosy.png",
+			"czlonkowie-lista-naglowek.png","czlonkowie-naglowek.png",
+			"dkk-logo-ab-digital-world.jpg","dkk-logo-akademia-muzyczna-wroclaw.jpg","dkk-logo-atm-grupa.jpg",
+			"dkk-logo-hasco-lek-wroclaw.jpg","dkk-logo-huber-group.jpg","dkk-logo-lexus-wroclaw.jpg",
+			"dkk-logo-space-one.jpg","dkk-logo-supra-brokers.jpg","dkk-logo-uniwersytecki-szpital-kliniczny.jpg",
+			"dkk-logo-uniwersytet-ekonomiczny-wroclaw.jpg","dkk-logo-uniwersytet-przyrodniczy-wroclaw.jpg",
+			"dkk-logo-uniwersytet-wroclawski.jpg","dkk-logo-wojskowy-szpital-kliniczny.jpg",
+			"dolnoslaski-klub-kapitalowy-logo.png","dolnoslaski-klub-kapitalowy-logo-responsive-1.png",
+			"do-pobrania-naglowek.png","dzialalnosc-background-full-hd.jpg",
+			"footer-facebook-icon.png","footer-google-plus-icon.png","footer-youtube-icon.png",
+			"Holanowski.jpg","HotelCityHotel6.jpg.webp","image001.jpg","image005.jpg",
+			"IMG-20240229-WA0011.jpg","IMG-20240229-WA0012.jpg","IMG-20240229-WA0013.jpg",
+			"IMG-20240229-WA0014.jpg","IMG-20240229-WA0015.jpg","IMG-20240229-WA0016.jpg",
+			"IMG-20240229-WA0017.jpg","IMG-20240229-WA0018.jpg","IMG-20240229-WA0019.jpg",
+			"IMG-20240321-WA0002.jpg","IMG-20240321-WA0003.jpg",
+			"Ireneusz-Kami\u0144ski-Wst\u0119ga-1.jpg",
+			"Janusz-Cymanek-dkk.jpg","Janusz-Rybak-dkk.jpg","Jozef_Nicpon.jpg",
+			"Krystian-Kielb-dkk.jpg","Krystyna_Wroblewska.jpg",
+			"Leszek Ko\u0142tun.png",
+			"logo_new-UP-Trziszka.png","Logo_wersja2.jpg","logo_ZUPBADURA_.jpg","logo-Krysia.png",
+			"\u0141ukasiewicz-Port-1.jpg","Marchwicki.jpg","Marek_Aksamski.jpg","Marek-Bojarski-dkk.jpg","Mariusz-Wiatr-1.jpg",
+			"misja-i-cele-background (1).png","misja-i-cele-naglowek-2.png","misja-i-cele-podpis-pl.png",
+			"mlode-talenty.png","nagroda-mt-logo.png","o-klubie-naglowek.png","panas-logo.png",
+			"PawelZawadzki.jpg","Piotr_Pobrotyn.jpg","Prof-Cezary-Madryas-1.jpg","pwr-logo-madryas.png",
+			"sncr_group-conference-3518465_1920.jpg","Soko\u0142owski.jpg","Stanislaw-Han-dkk.jpg",
+			"Szemainda.jpg","Szymon-Dragan-dkk.jpg",
+			"Tadeusz_Badura.jpg","Tadeusz_Szulc.jpg","Tadeusz_Trziszka.jpg",
+			"Tomasz_Pachura.jpg","Tomasz-Kurzewski-dkk.jpg",
+			"tungart7-business-8598076_1920.jpg","UE-logo.jpg","USK.jpg",
+			"VideoCapture_20240321-162321.jpg","VideoCapture_20240321-162408.jpg",
+			"Waldemar-Banasiak-dkk.jpg","Wojciech-Kielan-dkk.jpg"
+		];
+
+		const IMAGES_PER_PAGE = 6;
+		let currentIndex = 0;
+		let lightboxIndex = 0;
+		const grid = document.getElementById('galleryGrid');
+		const loadBtn = document.getElementById('galleryLoadMore');
+		const lightbox = document.getElementById('galleryLightbox');
+		const lbImg = document.getElementById('lightboxImg');
+		const lbCounter = document.getElementById('lightboxCounter');
+
+		function loadImages() {
+			const end = Math.min(currentIndex + IMAGES_PER_PAGE, galleryImages.length);
+			for (let i = currentIndex; i < end; i++) {
+				const item = document.createElement('div');
+				item.className = 'gallery-item';
+				item.dataset.index = i;
+				const img = document.createElement('img');
+				img.src = 'images/downloaded/' + encodeURIComponent(galleryImages[i]);
+				img.alt = 'Galeria DKK';
+				img.loading = 'lazy';
+				item.appendChild(img);
+				item.addEventListener('click', function() { openLightbox(parseInt(this.dataset.index)); });
+				grid.appendChild(item);
+			}
+			currentIndex = end;
+			if (currentIndex >= galleryImages.length) {
+				loadBtn.style.display = 'none';
+			}
+		}
+
+		function openLightbox(index) {
+			lightboxIndex = index;
+			updateLightbox();
+			lightbox.classList.add('active');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeLightbox() {
+			lightbox.classList.remove('active');
+			document.body.style.overflow = '';
+		}
+
+		function updateLightbox() {
+			lbImg.src = 'images/downloaded/' + encodeURIComponent(galleryImages[lightboxIndex]);
+			lbCounter.textContent = (lightboxIndex + 1) + ' / ' + galleryImages.length;
+		}
+
+		function prevImage() {
+			lightboxIndex = (lightboxIndex - 1 + galleryImages.length) % galleryImages.length;
+			updateLightbox();
+		}
+
+		function nextImage() {
+			lightboxIndex = (lightboxIndex + 1) % galleryImages.length;
+			updateLightbox();
+		}
+
+		loadBtn.addEventListener('click', function(e) { e.preventDefault(); loadImages(); });
+		document.getElementById('lightboxClose').addEventListener('click', function(e) { e.stopPropagation(); closeLightbox(); });
+		document.getElementById('lightboxPrev').addEventListener('click', function(e) { e.stopPropagation(); prevImage(); });
+		document.getElementById('lightboxNext').addEventListener('click', function(e) { e.stopPropagation(); nextImage(); });
+
+		lightbox.addEventListener('click', function(e) {
+			if (e.target === lightbox || e.target.classList.contains('lightbox-img-wrapper')) closeLightbox();
+		});
+
+		document.addEventListener('keydown', function(e) {
+			if (!lightbox.classList.contains('active')) return;
+			if (e.key === 'Escape') closeLightbox();
+			if (e.key === 'ArrowLeft') prevImage();
+			if (e.key === 'ArrowRight') nextImage();
+		});
+
+		loadImages();
+	})();
+	</script>
 </body>
 </html>
