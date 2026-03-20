@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+	// Dynamic footer year
+	document.querySelectorAll('.footer-year').forEach(el => {
+		el.textContent = new Date().getFullYear();
+	});
+
 	// Mobile Menu Toggle
 	const mobileToggle = document.querySelector('.mobile-menu-toggle');
 	const mainNav = document.querySelector('.main-nav');

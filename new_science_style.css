@@ -587,7 +587,6 @@
 	align-items: center;
 	position: relative;
 	z-index: 2;
-	margin-bottom: 80px;
 }
 
 /* --- Left Visual --- */
@@ -595,19 +594,20 @@
 	position: relative;
 	width: 100%;
 	max-width: 500px;
-	aspect-ratio: 4/5;
 	margin: 0 auto;
+	opacity: 1 !important;
+	transform: none !important;
 }
 
 .synergy-deco-frame {
 	position: absolute;
 	top: 30px;
-	left: 0;
+	left: -15px;
 	width: 75%;
 	height: 75%;
 	border: 2px solid var(--gold-accent);
 	opacity: 0.4;
-	z-index: 1;
+	z-index: -1;
 	transition: opacity 0.4s ease;
 }
 
@@ -616,11 +616,9 @@
 }
 
 .synergy-image-frame {
-	position: absolute;
-	top: 0;
-	left: 30px;
-	right: 20px;
-	bottom: 30px;
+	position: relative;
+	width: 100%;
+	aspect-ratio: 4/5;
 	z-index: 2;
 	overflow: hidden;
 	box-shadow: 0 30px 70px rgba(0,0,0,0.15);
@@ -640,16 +638,16 @@
 /* Stat Badge */
 .synergy-stat-badge {
 	position: absolute;
-	bottom: -10px;
-	left: -10px;
+	bottom: 30px;
+	left: 0;
 	background: var(--white);
-	padding: 22px 28px;
+	padding: 20px 26px;
 	display: flex;
 	align-items: center;
-	gap: 18px;
+	gap: 16px;
 	z-index: 5;
-	box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-	animation: synergy-float 5s ease-in-out infinite;
+	box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+	border-radius: 0 12px 0 0;
 }
 
 @keyframes synergy-float {
@@ -702,7 +700,7 @@
 	background: var(--gold-accent);
 	border-radius: 50%;
 	opacity: 0.25;
-	z-index: 0;
+	z-index: 3;
 }
 
 /* --- Right Content --- */
@@ -714,33 +712,20 @@
 	z-index: 2;
 }
 
-.synergy-label {
-	display: inline-flex;
-	align-items: center;
-	gap: 14px;
-	margin-bottom: 20px;
-}
-
-.synergy-label::before {
-	content: '';
-	width: 40px;
-	height: 2px;
-	background: var(--gold-accent);
-}
-
-.synergy-label span {
-	font-size: 0.82rem;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	color: var(--gold-accent);
-	font-weight: 600;
-	font-family: var(--font-body);
+.synergy-content .suptitle {
+	margin-bottom: 1rem;
 }
 
 .synergy-content .section-title {
 	font-size: 3rem;
 	line-height: 1.15;
 	margin-bottom: 0.5rem;
+	white-space: nowrap;
+}
+
+.synergy-content .divider-gold {
+	margin: 1.5rem 0;
+	background: linear-gradient(90deg, var(--gold-accent), transparent);
 }
 
 .synergy-lead {
@@ -755,7 +740,7 @@
 	font-size: 0.95rem;
 	line-height: 1.8;
 	color: var(--text-light);
-	margin-bottom: 2.5rem;
+	margin-bottom: 1.5rem;
 }
 
 /* Highlights */
@@ -977,5 +962,262 @@
 	}
 	.synergy-highlight-item {
 		padding: 14px 16px;
+	}
+}
+
+/* --- Inline Carousel (right column, under desc) --- */
+.synergy-carousel-inline {
+	margin-top: 0.5rem;
+	padding-top: 20px;
+	border-top: 1px solid rgba(197, 160, 89, 0.15);
+	position: relative;
+	z-index: 2;
+}
+
+.synergy-carousel-inline .synergy-carousel-viewport {
+	mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.synergy-carousel-inline .synergy-logo-item {
+	padding: 12px 20px;
+	min-width: 130px;
+}
+
+.synergy-carousel-inline .synergy-logo-item img {
+	height: 50px;
+}
+
+.synergy-carousel-inline .synergy-logo-item span {
+	opacity: 1;
+	transform: none;
+	font-size: 0.62rem;
+}
+
+@media (max-width: 992px) {
+	.synergy-content .section-title {
+		white-space: normal;
+	}
+	.synergy-carousel-inline .synergy-logo-item {
+		padding: 10px 15px;
+		min-width: 110px;
+	}
+	.synergy-carousel-inline .synergy-logo-item img {
+		height: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.synergy-stat-badge {
+		padding: 14px 18px;
+		gap: 12px;
+	}
+	.synergy-stat-badge .synergy-stat-number {
+		font-size: 2.2rem;
+	}
+	.synergy-stat-badge .synergy-stat-icon {
+		width: 42px;
+		height: 42px;
+	}
+}
+
+/* ===========================================================
+   SCI-SECTION — Synergia Biznesu i Nauki (rebuilt)
+   =========================================================== */
+
+.sci-section {
+	background: linear-gradient(175deg, #f8f6f1 0%, #ffffff 40%, #fdfbf7 100%);
+	padding: 120px 0 100px;
+	overflow: hidden;
+}
+
+.sci-grid {
+	display: flex;
+	gap: 70px;
+	align-items: stretch;
+}
+
+/* --- Left: Image --- */
+.sci-visual {
+	flex: 0 0 44%;
+	max-width: 44%;
+	position: relative;
+	align-self: stretch;
+}
+
+.sci-gold-frame {
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 60%;
+	height: 60%;
+	border-top: 4px solid var(--gold-accent);
+	border-left: 4px solid var(--gold-accent);
+	z-index: 3;
+	pointer-events: none;
+}
+
+.sci-decoration-box {
+	position: absolute;
+	bottom: -30px;
+	right: -30px;
+	width: 70%;
+	height: 70%;
+	background: rgba(197, 160, 89, 0.06);
+	border: 1px solid rgba(197, 160, 89, 0.15);
+	z-index: 1;
+	pointer-events: none;
+}
+
+.sci-photo {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	box-shadow: 0 25px 60px rgba(0,0,0,0.14);
+	z-index: 2;
+}
+
+.sci-photo img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.6s ease;
+}
+
+.sci-visual:hover .sci-photo img {
+	transform: scale(1.03);
+}
+
+/* --- Right: Content --- */
+.sci-content {
+	flex: 1;
+	min-width: 0;
+}
+
+.sci-content .section-title {
+	font-size: 2.8rem;
+	line-height: 1.15;
+	margin-bottom: 0.5rem;
+}
+
+.sci-divider {
+	width: 80px;
+	height: 2px;
+	background: linear-gradient(90deg, var(--gold-accent), transparent);
+	margin: 1.2rem 0 1.5rem;
+}
+
+.sci-lead {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: var(--text-dark);
+	margin-bottom: 1rem;
+}
+
+.sci-desc {
+	font-size: 0.95rem;
+	line-height: 1.8;
+	color: var(--text-light);
+	margin-bottom: 1.8rem;
+}
+
+/* --- Logo Slider --- */
+.sci-logos {
+	overflow: hidden;
+	border-top: 1px solid rgba(197, 160, 89, 0.15);
+	padding-top: 20px;
+	mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.sci-logos-track {
+	display: flex;
+	width: max-content;
+	animation: sci-scroll 35s linear infinite;
+}
+
+.sci-logos-track:hover {
+	animation-play-state: paused;
+}
+
+@keyframes sci-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+.sci-logo-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 22px;
+	min-width: 130px;
+}
+
+.sci-logo-item img {
+	height: 50px;
+	width: auto;
+	max-width: 130px;
+	object-fit: contain;
+	filter: grayscale(30%) opacity(0.75);
+	transition: all 0.3s ease;
+}
+
+.sci-logo-item:hover img {
+	filter: grayscale(0%) opacity(1);
+	transform: scale(1.08);
+}
+
+.sci-logo-item span {
+	font-size: 0.62rem;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+	color: var(--text-light);
+	font-weight: 500;
+	text-align: center;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+	.sci-section {
+		padding: 80px 0 60px;
+	}
+	.sci-grid {
+		flex-direction: column;
+		gap: 50px;
+	}
+	.sci-visual {
+		flex: none;
+		max-width: 500px;
+		width: 100%;
+		aspect-ratio: 1;
+	}
+	.sci-gold-frame {
+		top: -15px;
+		left: -15px;
+	}
+	.sci-decoration-box {
+		bottom: -20px;
+		right: -20px;
+	}
+	.sci-content .section-title {
+		font-size: 2.3rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.sci-section {
+		padding: 60px 0 40px;
+	}
+	.sci-grid {
+		gap: 35px;
+	}
+	.sci-content .section-title {
+		font-size: 1.9rem;
+	}
+	.sci-logo-item img {
+		height: 40px;
 	}
 }
