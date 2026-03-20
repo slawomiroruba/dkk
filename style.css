@@ -78,6 +78,12 @@ ul {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+@media (max-width: 768px) {
+	.main-header {
+		border-bottom: none;
+	}
+}
+
 .main-header.scrolled {
     background-color: #ffffff;
     padding: 0.8rem 0;
@@ -519,11 +525,32 @@ ul {
 }
 
 @media (max-width: 768px) {
+	.hero-page {
+		min-height: 50vh;
+		padding-top: 90px;
+		padding-bottom: 40px;
+	}
+	.glass-breadcrumbs {
+		margin-top: 15px;
+		margin-bottom: 25px;
+		padding: 8px 16px;
+		gap: 8px;
+	}
+	.glass-breadcrumbs a,
+	.glass-breadcrumbs .current {
+		font-size: 0.7rem;
+	}
+	.glass-breadcrumbs .separator {
+		font-size: 0.6rem;
+	}
 	.hero-page-title {
-		font-size: 3rem;
+		font-size: 2.2rem;
+		line-height: 1.15;
+		margin-bottom: 1rem;
 	}
 	.hero-page-subtitle {
-		font-size: 1.4rem;
+		font-size: 1.15rem;
+		line-height: 1.4;
 	}
 }
 
@@ -2386,36 +2413,38 @@ ul {
 	.main-nav .has-dropdown > a {
 		padding-right: 0;
 		margin-bottom: 5px;
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		gap: 5px;
 		width: auto;
 		position: relative;
 	}
 	
 	/* Mobile Submenu Toggle Button */
 	.mobile-submenu-toggle {
-		position: absolute;
-		right: 10px; /* Adjust based on container */
-		top: 0;
-		width: 40px;
-		height: 40px;
-		background: rgba(0,0,0,0.03);
-		border-radius: 50%;
-		display: flex !important; /* Force flex */
+		display: inline-flex !important;
 		align-items: center;
 		justify-content: center;
+		width: auto;
+		height: auto;
+		background: none;
+		border: none;
 		cursor: pointer;
-		z-index: 10;
-		color: var(--navy-primary);
+		color: var(--gold-accent);
 		transition: all 0.3s ease;
+		padding: 0;
+		margin-left: 3px;
 	}
 	
 	.mobile-submenu-toggle:hover {
-		background: rgba(197, 160, 89, 0.2);
-		color: var(--gold-accent);
+		color: var(--navy-primary);
+		background: none;
 	}
 
 	.mobile-submenu-toggle i {
-		transition: tran
+		font-size: 0.65rem;
+		transition: transform 0.3s ease;
+	}
 
 /* --- MERGED FROM new_authority_styles.css --- */
 
@@ -4192,12 +4221,11 @@ sform 0.3s ease;
     color: var(--white);
     border-color: var(--navy-primary);
 }
-sform 0.3s ease;
-	}
 
+@media (max-width: 768px) {
 	.main-nav .has-dropdown.active .mobile-submenu-toggle {
-		background: var(--navy-primary);
-		color: var(--white);
+		background: none;
+		color: var(--gold-accent);
 	}
 	
 	.main-nav .has-dropdown.active .mobile-submenu-toggle i {

@@ -29,14 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		// Create toggle button
 		const toggleBtn = document.createElement('span');
 		toggleBtn.className = 'mobile-submenu-toggle';
-		toggleBtn.innerHTML = '<i class="fas fa-chevron-down"></i>'; // FontAwesome chevron
+		toggleBtn.innerHTML = '<i class="fas fa-angle-down"></i>';
 		
-		// Append to the list item
-		item.appendChild(toggleBtn);
+		// Insert inside the link, at the end
+		const link = item.querySelector(':scope > a');
+		if (link) {
+			link.appendChild(toggleBtn);
+		} else {
+			item.appendChild(toggleBtn);
+		}
 
 		// Handle toggle click
 		toggleBtn.addEventListener('click', (e) => {
-			e.stopPropagation(); // Prevent bubbling layout issues
+			e.preventDefault();
+			e.stopPropagation();
 			
 			// Toggle open state on parent li
 			item.classList.toggle('active');
